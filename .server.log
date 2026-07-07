@@ -1,0 +1,577 @@
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.19:3000
+✓ Ready in 550ms
+
+ GET / 200 in 500ms (next.js: 241ms, application-code: 259ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+          <SegmentViewNode type="page" pagePath="page.tsx">
+            <SegmentTrieNode>
+            <HomePage>
+              <HomeClient disciplines={[...]} careers={[...]}>
+                <div>
+                  <section>
+                  <section className="max-w-7xl ...">
+                    <div>
+                    <CareerCardGrid careers={[...]} onRefresh={function HomeClient.useCallback[handleRefresh]} ...>
+                      <div>
+                        <div>
+                        <div className="grid grid-...">
+                          <CareerCard career={{slug:"soft...", ...}}>
+                            <LinkComponent href="/career/so..." className="career-car...">
+                              <a
+                                className="career-card block"
+                                ref={function}
+                                onClick={function onClick}
+                                onMouseEnter={function onMouseEnter}
+                                onTouchStart={function onTouchStart}
++                               href="/career/software-engineer"
+-                               href="/career/ai-engineer"
+                              >
+                                <div className="relative c...">
+                                  <img
++                                   alt="一位坐在电脑前编写代码的软件工程师"
+-                                   alt="一位正在训练深度学习模型的AI工程师"
+                                    fetchPriority={undefined}
+                                    loading="lazy"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="object-cover"
+                                    style={{position:"absolute",height:"100%",width:"100%",left:0,top:0,right:0,bottom:0,objectFit:undefined, ...}}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
++                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fsoftware-engineer.webp&w=128&q=75..."}
+-                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fai-engineer.webp&w=128&q=75 128w,..."}
++                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fsoftware-engineer.webp&w=3840&q=75"}
+-                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fai-engineer.webp&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+                                  >
+                                <div className="career-car...">
+                                  <h3 className="career-card__title">
++                                   软件工程师
+-                                   AI工程师
+                                  ...
+                          ...
+          ...
+        ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at throwOnHydrationMismatch (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3318:56)
+    at prepareToHydrateHostInstance (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3372:23)
+    at completeWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6922:60)
+    at runWithFiberInDEV (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at completeUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+    at h3 (<anonymous>)
+    at CareerCard (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:48:223)
+    at <unknown> (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:251)
+    at Array.map (<anonymous>)
+    at CareerCardGrid (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:35)
+    at HomeClient (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:381:223)
+    at HomePage (src\app\page.tsx:10:5)
+   8 |
+   9 |   return (
+> 10 |     <HomeClient
+     |     ^
+  11 |       disciplines={disciplines}
+  12 |       careers={allCareers}
+  13 |     />
+[browser] Image with src "/images/careers/data-scientist.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)
+ GET /career/data-scientist 200 in 586ms (next.js: 543ms, generate-params: 495ms, application-code: 43ms)
+✓ Compiled in 81ms
+✓ Compiled in 61ms
+✓ Compiled in 60ms
+✓ Compiled in 53ms
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+✓ Compiled in 71ms
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /career/data-scientist 200 in 302ms (next.js: 124ms, generate-params: 6ms, application-code: 178ms)
+ GET /career/data-scientist 200 in 383ms (next.js: 51ms, generate-params: 32µs, application-code: 332ms)
+ GET /career/data-scientist 200 in 56ms (next.js: 6ms, generate-params: 48µs, application-code: 50ms)
+ GET /career/data-scientist 200 in 289ms (next.js: 99ms, generate-params: 27µs, application-code: 190ms)
+ GET /career/data-scientist 200 in 291ms (next.js: 34ms, generate-params: 28µs, application-code: 257ms)
+ GET /career/data-scientist 200 in 291ms (next.js: 66ms, generate-params: 27µs, application-code: 225ms)
+ GET /career/data-scientist 200 in 305ms (next.js: 5ms, generate-params: 37µs, application-code: 300ms)
+✓ Compiled in 58ms
+✓ Compiled in 56ms
+✓ Compiled in 54ms
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /career/data-scientist 200 in 251ms (next.js: 108ms, generate-params: 6ms, application-code: 143ms)
+ GET /career/data-scientist 200 in 318ms (next.js: 6ms, generate-params: 55µs, application-code: 311ms)
+ GET /career/data-scientist 200 in 238ms (next.js: 156ms, generate-params: 30µs, application-code: 82ms)
+ GET /career/data-scientist 200 in 241ms (next.js: 36ms, generate-params: 19µs, application-code: 206ms)
+ GET /career/data-scientist 200 in 46ms (next.js: 8ms, generate-params: 26µs, application-code: 37ms)
+ GET /career/data-scientist 200 in 246ms (next.js: 66ms, generate-params: 34µs, application-code: 180ms)
+ GET /career/data-scientist 200 in 259ms (next.js: 7ms, generate-params: 38µs, application-code: 252ms)
+✓ Compiled in 58ms
+✓ Compiled in 94ms
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /career/data-scientist 200 in 254ms (next.js: 95ms, generate-params: 6ms, application-code: 158ms)
+ GET /career/data-scientist 200 in 308ms (next.js: 48ms, generate-params: 19µs, application-code: 260ms)
+ GET /career/data-scientist 200 in 247ms (next.js: 62ms, generate-params: 23µs, application-code: 185ms)
+ GET /career/data-scientist 200 in 248ms (next.js: 33ms, generate-params: 18µs, application-code: 215ms)
+ GET /career/data-scientist 200 in 45ms (next.js: 5ms, generate-params: 21µs, application-code: 40ms)
+ GET /career/data-scientist 200 in 247ms (next.js: 156ms, generate-params: 20µs, application-code: 91ms)
+ GET /career/data-scientist 200 in 260ms (next.js: 5ms, generate-params: 18µs, application-code: 255ms)
+✓ Compiled in 67ms
+✓ Compiled in 71ms
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /career/data-scientist 200 in 247ms (next.js: 110ms, generate-params: 6ms, application-code: 137ms)
+ GET /career/data-scientist 200 in 298ms (next.js: 6ms, generate-params: 37µs, application-code: 291ms)
+ GET /career/data-scientist 200 in 48ms (next.js: 5ms, generate-params: 37µs, application-code: 43ms)
+ GET /career/data-scientist 200 in 235ms (next.js: 32ms, generate-params: 18µs, application-code: 203ms)
+ GET /career/data-scientist 200 in 234ms (next.js: 87ms, generate-params: 17µs, application-code: 147ms)
+ GET /career/data-scientist 200 in 235ms (next.js: 59ms, generate-params: 22µs, application-code: 176ms)
+ GET /career/data-scientist 200 in 247ms (next.js: 6ms, generate-params: 19µs, application-code: 240ms)
+✓ Compiled in 155ms
+ GET /career/data-scientist 200 in 94ms (next.js: 31ms, generate-params: 17µs, application-code: 63ms)
+ GET /career/data-scientist 200 in 328ms (next.js: 58ms, generate-params: 6ms, application-code: 270ms)
+ GET /career/data-scientist 200 in 117ms (next.js: 3ms, generate-params: 23µs, application-code: 114ms)
+ GET / 200 in 209ms (next.js: 65ms, application-code: 144ms)
+ GET /career/data-scientist 200 in 70ms (next.js: 10ms, generate-params: 7ms, application-code: 61ms)
+ GET / 200 in 24ms (next.js: 3ms, application-code: 22ms)
+ GET / 200 in 43ms (next.js: 3ms, application-code: 40ms)
+ GET / 200 in 46ms (next.js: 2ms, application-code: 43ms)
+ GET / 200 in 47ms (next.js: 3ms, application-code: 44ms)
+ GET /categories 200 in 426ms (next.js: 341ms, application-code: 85ms)
+ GET /categories 200 in 69ms (next.js: 3ms, application-code: 67ms)
+ GET /categories 200 in 68ms (next.js: 3ms, application-code: 65ms)
+ GET /categories 200 in 63ms (next.js: 3ms, application-code: 60ms)
+ GET /career/software-engineer 200 in 66ms (next.js: 9ms, generate-params: 6ms, application-code: 57ms)
+ GET /career/software-engineer 200 in 58ms (next.js: 4ms, generate-params: 35µs, application-code: 54ms)
+ GET /search 200 in 394ms (next.js: 341ms, application-code: 53ms)
+ GET /categories/engineering 200 in 2.4s (next.js: 2.3s, generate-params: 452ms, application-code: 69ms)
+ GET /categories/engineering 200 in 80ms (next.js: 13ms, generate-params: 9ms, application-code: 67ms)
+ GET /api/search?q=%E8%BD%AF%E4%BB%B6 200 in 372ms (next.js: 344ms, application-code: 28ms)
+ GET /api/search?q=xyz123 200 in 8ms (next.js: 2ms, application-code: 6ms)
+ GET / 200 in 57ms (next.js: 3ms, application-code: 54ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+          <SegmentViewNode type="page" pagePath="page.tsx">
+            <SegmentTrieNode>
+            <HomePage>
+              <HomeClient disciplines={[...]} careers={[...]}>
+                <div>
+                  <section>
+                  <section className="max-w-7xl ...">
+                    <div>
+                    <CareerCardGrid careers={[...]} onRefresh={function HomeClient.useCallback[handleRefresh]} ...>
+                      <div>
+                        <div>
+                        <div className="grid grid-...">
+                          <CareerCard career={{slug:"lawyer", ...}}>
+                            <LinkComponent href="/career/la..." className="career-car...">
+                              <a
+                                className="career-card block"
+                                ref={function}
+                                onClick={function onClick}
+                                onMouseEnter={function onMouseEnter}
+                                onTouchStart={function onTouchStart}
++                               href="/career/lawyer"
+-                               href="/career/ai-engineer"
+                              >
+                                <div className="relative c...">
+                                  <img
++                                   alt="一位在法庭上进行辩护的律师"
+-                                   alt="一位正在训练深度学习模型的AI工程师"
+                                    fetchPriority={undefined}
+                                    loading="lazy"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="object-cover"
+                                    style={{position:"absolute",height:"100%",width:"100%",left:0,top:0,right:0,bottom:0,objectFit:undefined, ...}}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
++                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Flawyer.webp&w=128&q=75 128w, /_ne..."}
+-                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fai-engineer.webp&w=128&q=75 128w,..."}
++                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Flawyer.webp&w=3840&q=75"}
+-                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fai-engineer.webp&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+                                  >
+                                <div className="career-car...">
+                                  <h3 className="career-card__title">
++                                   律师
+-                                   AI工程师
+                                  ...
+                          ...
+          ...
+        ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at throwOnHydrationMismatch (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3318:56)
+    at prepareToHydrateHostInstance (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3372:23)
+    at completeWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6922:60)
+    at runWithFiberInDEV (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at completeUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+    at h3 (<anonymous>)
+    at CareerCard (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:48:223)
+    at <unknown> (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:251)
+    at Array.map (<anonymous>)
+    at CareerCardGrid (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:35)
+    at HomeClient (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:381:223)
+    at HomePage (src\app\page.tsx:10:5)
+   8 |
+   9 |   return (
+> 10 |     <HomeClient
+     |     ^
+  11 |       disciplines={disciplines}
+  12 |       careers={allCareers}
+  13 |     />
+ GET / 200 in 8ms (next.js: 3ms, application-code: 5ms)
+ GET / 200 in 19ms (next.js: 2ms, application-code: 16ms)
+ GET /career/software-engineer 200 in 40ms (next.js: 9ms, generate-params: 6ms, application-code: 31ms)
+ GET / 200 in 90ms (next.js: 3ms, application-code: 87ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+          <SegmentViewNode type="page" pagePath="page.tsx">
+            <SegmentTrieNode>
+            <HomePage>
+              <HomeClient disciplines={[...]} careers={[...]}>
+                <div>
+                  <section>
+                  <section className="max-w-7xl ...">
+                    <div>
+                    <CareerCardGrid careers={[...]} onRefresh={function HomeClient.useCallback[handleRefresh]} ...>
+                      <div>
+                        <div>
+                        <div className="grid grid-...">
+                          <CareerCard career={{slug:"data...", ...}}>
+                            <LinkComponent href="/career/da..." className="career-car...">
+                              <a
+                                className="career-card block"
+                                ref={function}
+                                onClick={function onClick}
+                                onMouseEnter={function onMouseEnter}
+                                onTouchStart={function onTouchStart}
++                               href="/career/data-scientist"
+-                               href="/career/teacher"
+                              >
+                                <div className="relative c...">
+                                  <img
++                                   alt="一位正在分析数据可视化的数据科学家"
+-                                   alt="一位正在讲课的教师"
+                                    fetchPriority={undefined}
+                                    loading="lazy"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="object-cover"
+                                    style={{position:"absolute",height:"100%",width:"100%",left:0,top:0,right:0,bottom:0,objectFit:undefined, ...}}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
++                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fdata-scientist.webp&w=128&q=75 12..."}
+-                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fteacher.webp&w=128&q=75 128w, /_n..."}
++                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fdata-scientist.webp&w=3840&q=75"}
+-                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fteacher.webp&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+                                  >
+                                <div className="career-car...">
+                                  <h3 className="career-card__title">
++                                   数据科学家
+-                                   教师
+                                  ...
+                          ...
+          ...
+        ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at throwOnHydrationMismatch (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3318:56)
+    at prepareToHydrateHostInstance (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3372:23)
+    at completeWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6922:60)
+    at runWithFiberInDEV (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at completeUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+    at h3 (<anonymous>)
+    at CareerCard (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:48:223)
+    at <unknown> (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:251)
+    at Array.map (<anonymous>)
+    at CareerCardGrid (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:35)
+    at HomeClient (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:381:223)
+    at HomePage (src\app\page.tsx:10:5)
+   8 |
+   9 |   return (
+> 10 |     <HomeClient
+     |     ^
+  11 |       disciplines={disciplines}
+  12 |       careers={allCareers}
+  13 |     />
+[browser] Image with src "/images/careers/teacher.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)
+ GET /search?q=%E5%8C%BB%E7%94%9F 200 in 31ms (next.js: 3ms, application-code: 28ms)
+ POST /api/ai-generate 404 in 71ms (next.js: 26ms, application-code: 44ms)
+ GET /search?q=%E6%8A%A4%E5%A3%AB 200 in 64ms (next.js: 5ms, application-code: 60ms)
+ GET /search?q=%E6%8A%A4%E5%A3%AB 200 in 91ms (next.js: 8ms, application-code: 83ms)
+ GET /search?q=%E6%8A%A4%E5%A3%AB 200 in 56ms (next.js: 5ms, application-code: 51ms)
+ GET / 200 in 20ms (next.js: 3ms, application-code: 17ms)
+ GET / 200 in 67ms (next.js: 5ms, application-code: 62ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+          <SegmentViewNode type="page" pagePath="page.tsx">
+            <SegmentTrieNode>
+            <HomePage>
+              <HomeClient disciplines={[...]} careers={[...]}>
+                <div>
+                  <section>
+                  <section className="max-w-7xl ...">
+                    <div>
+                    <CareerCardGrid careers={[...]} onRefresh={function HomeClient.useCallback[handleRefresh]} ...>
+                      <div>
+                        <div>
+                        <div className="grid grid-...">
+                          <CareerCard career={{slug:"data...", ...}}>
+                            <LinkComponent href="/career/da..." className="career-car...">
+                              <a
+                                className="career-card block"
+                                ref={function}
+                                onClick={function onClick}
+                                onMouseEnter={function onMouseEnter}
+                                onTouchStart={function onTouchStart}
++                               href="/career/data-scientist"
+-                               href="/career/ai-engineer"
+                              >
+                                <div className="relative c...">
+                                  <img
++                                   alt="一位正在分析数据可视化的数据科学家"
+-                                   alt="一位正在训练深度学习模型的AI工程师"
+                                    fetchPriority={undefined}
+                                    loading="lazy"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="object-cover"
+                                    style={{position:"absolute",height:"100%",width:"100%",left:0,top:0,right:0,bottom:0,objectFit:undefined, ...}}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
++                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fdata-scientist.webp&w=128&q=75 12..."}
+-                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fai-engineer.webp&w=128&q=75 128w,..."}
++                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fdata-scientist.webp&w=3840&q=75"}
+-                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fai-engineer.webp&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+                                  >
+                                <div className="career-car...">
+                                  <h3 className="career-card__title">
++                                   数据科学家
+-                                   AI工程师
+                                  ...
+                          ...
+          ...
+        ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at throwOnHydrationMismatch (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3318:56)
+    at prepareToHydrateHostInstance (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3372:23)
+    at completeWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6922:60)
+    at runWithFiberInDEV (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at completeUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+    at h3 (<anonymous>)
+    at CareerCard (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:48:223)
+    at <unknown> (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:251)
+    at Array.map (<anonymous>)
+    at CareerCardGrid (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:35)
+    at HomeClient (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:381:223)
+    at HomePage (src\app\page.tsx:10:5)
+   8 |
+   9 |   return (
+> 10 |     <HomeClient
+     |     ^
+  11 |       disciplines={disciplines}
+  12 |       careers={allCareers}
+  13 |     />
+[browser] Image with src "/images/careers/teacher.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)
+ GET / 200 in 55ms (next.js: 3ms, application-code: 52ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+          <SegmentViewNode type="page" pagePath="page.tsx">
+            <SegmentTrieNode>
+            <HomePage>
+              <HomeClient disciplines={[...]} careers={[...]}>
+                <div>
+                  <section>
+                  <section className="max-w-7xl ...">
+                    <div>
+                    <CareerCardGrid careers={[...]} onRefresh={function HomeClient.useCallback[handleRefresh]} ...>
+                      <div>
+                        <div>
+                        <div className="grid grid-...">
+                          <CareerCard career={{slug:"ai-e...", ...}}>
+                            <LinkComponent href="/career/ai..." className="career-car...">
+                              <a
+                                className="career-card block"
+                                ref={function}
+                                onClick={function onClick}
+                                onMouseEnter={function onMouseEnter}
+                                onTouchStart={function onTouchStart}
++                               href="/career/ai-engineer"
+-                               href="/career/data-scientist"
+                              >
+                                <div className="relative c...">
+                                  <img
++                                   alt="一位正在训练深度学习模型的AI工程师"
+-                                   alt="一位正在分析数据可视化的数据科学家"
+                                    fetchPriority={undefined}
+                                    loading="lazy"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="object-cover"
+                                    style={{position:"absolute",height:"100%",width:"100%",left:0,top:0,right:0,bottom:0,objectFit:undefined, ...}}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
++                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fai-engineer.webp&w=128&q=75 128w,..."}
+-                                   srcSet={"/_next/image?url=%2Fimages%2Fcareers%2Fdata-scientist.webp&w=128&q=75 12..."}
++                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fai-engineer.webp&w=3840&q=75"}
+-                                   src={"/_next/image?url=%2Fimages%2Fcareers%2Fdata-scientist.webp&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+                                  >
+                                <div className="career-car...">
+                                  <h3 className="career-card__title">
++                                   AI工程师
+-                                   数据科学家
+                                  ...
+                          ...
+          ...
+        ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at throwOnHydrationMismatch (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3318:56)
+    at prepareToHydrateHostInstance (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3372:23)
+    at completeWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6922:60)
+    at runWithFiberInDEV (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at completeUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+    at h3 (<anonymous>)
+    at CareerCard (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:48:223)
+    at <unknown> (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:251)
+    at Array.map (<anonymous>)
+    at CareerCardGrid (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:171:35)
+    at HomeClient (file://D:/求职城市网/.next/dev/static/chunks/src_172zkh_._.js:381:223)
+    at HomePage (src\app\page.tsx:10:5)
+   8 |
+   9 |   return (
+> 10 |     <HomeClient
+     |     ^
+  11 |       disciplines={disciplines}
+  12 |       careers={allCareers}
+  13 |     />
+[browser] Image with src "/images/careers/data-scientist.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading (file://D:/求职城市网/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)
+ GET / 200 in 8ms (next.js: 2ms, application-code: 6ms)
+ GET / 200 in 19ms (next.js: 3ms, application-code: 16ms)
+ GET /categories 200 in 32ms (next.js: 3ms, application-code: 28ms)
+ GET /categories/science 200 in 35ms (next.js: 9ms, generate-params: 6ms, application-code: 25ms)
+ GET /categories 200 in 32ms (next.js: 3ms, application-code: 29ms)
+ GET /categories/medicine 200 in 30ms (next.js: 8ms, generate-params: 5ms, application-code: 22ms)
+ GET /categories 200 in 35ms (next.js: 2ms, application-code: 33ms)
+ GET / 200 in 21ms (next.js: 3ms, application-code: 18ms)

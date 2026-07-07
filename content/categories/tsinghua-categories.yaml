@@ -1,0 +1,502 @@
+# 清华大学 12 大学科门类 → 33 个学院 → 93 个本科专业 → 400+ 职业
+# 完整分类数据（含全部 12 门类）
+
+disciplines:
+  # ===== 1. 理学 =====
+  - id: science
+    name: 理学
+    description: 研究自然现象基本规律的基础学科
+    icon: flask-conical
+    color: "#2563EB"
+    schools:
+      - id: math
+        name: 数学科学系
+        disciplineId: science
+        majors:
+          - id: math-applied
+            name: 数学与应用数学
+            schoolId: math
+            description: 培养具有扎实数学基础和解决实际问题能力的专业人才
+            careerSlugs:
+              - data-scientist
+              - quantitative-analyst
+              - statistician
+              - math-teacher
+              - actuarial-analyst
+      - id: physics
+        name: 物理系
+        disciplineId: science
+        majors:
+          - id: physics-pure
+            name: 物理学
+            schoolId: physics
+            description: 研究物质运动最一般规律和物质基本结构
+            careerSlugs:
+              - physicist
+              - optics-engineer
+              - semiconductor-engineer
+              - physics-teacher
+      - id: chemistry
+        name: 化学系
+        disciplineId: science
+        majors:
+          - id: chemistry-pure
+            name: 化学
+            schoolId: chemistry
+            description: 研究物质组成、结构、性质与变化规律
+            careerSlugs:
+              - chemist
+              - chemical-analyst
+              - materials-scientist
+              - chemistry-teacher
+      - id: life-science
+        name: 生命科学学院
+        disciplineId: science
+        majors:
+          - id: biology
+            name: 生物科学
+            schoolId: life-science
+            description: 研究生命现象和生命活动规律
+            careerSlugs:
+              - biologist
+              - biotechnologist
+              - geneticist
+              - biology-teacher
+
+  # ===== 2. 工学 =====
+  - id: engineering
+    name: 工学
+    description: 应用自然科学原理解决实际问题的工程学科
+    icon: wrench
+    color: "#DC2626"
+    schools:
+      - id: computer-science
+        name: 计算机科学与技术系
+        disciplineId: engineering
+        majors:
+          - id: cs-core
+            name: 计算机科学与技术
+            schoolId: computer-science
+            careerSlugs:
+              - software-engineer
+              - fullstack-developer
+              - devops-engineer
+              - database-administrator
+              - systems-architect
+          - id: software-engineering
+            name: 软件工程
+            schoolId: computer-science
+            careerSlugs:
+              - software-engineer
+              - mobile-developer
+              - qa-engineer
+              - scrum-master
+              - frontend-engineer
+          - id: ai
+            name: 人工智能
+            schoolId: computer-science
+            careerSlugs:
+              - ai-engineer
+              - machine-learning-engineer
+              - nlp-scientist
+              - computer-vision-engineer
+              - prompt-engineer
+      - id: electronic-engineering
+        name: 电子工程系
+        disciplineId: engineering
+        majors:
+          - id: ee-core
+            name: 电子信息工程
+            schoolId: electronic-engineering
+            careerSlugs:
+              - electronics-engineer
+              - embedded-systems-engineer
+              - iot-engineer
+              - telecommunications-engineer
+      - id: mechanical-engineering
+        name: 机械工程系
+        disciplineId: engineering
+        majors:
+          - id: me-core
+            name: 机械工程
+            schoolId: mechanical-engineering
+            careerSlugs:
+              - mechanical-engineer
+              - automotive-engineer
+              - robotics-engineer
+              - manufacturing-engineer
+      - id: civil-engineering
+        name: 土木工程系
+        disciplineId: engineering
+        majors:
+          - id: civil-core
+            name: 土木工程
+            schoolId: civil-engineering
+            careerSlugs:
+              - civil-engineer
+              - structural-engineer
+              - construction-manager
+              - surveyor
+
+  # ===== 3. 医学 =====
+  - id: medicine
+    name: 医学
+    description: 研究人体健康与疾病的防治
+    icon: stethoscope
+    color: "#059669"
+    schools:
+      - id: clinical-medicine
+        name: 医学院
+        disciplineId: medicine
+        majors:
+          - id: clinical
+            name: 临床医学
+            schoolId: clinical-medicine
+            careerSlugs:
+              - doctor
+              - surgeon
+              - pediatrician
+              - psychiatrist
+              - anesthesiologist
+      - id: pharmacy
+        name: 药学院
+        disciplineId: medicine
+        majors:
+          - id: pharmaceutical
+            name: 药学
+            schoolId: pharmacy
+            careerSlugs:
+              - pharmacist
+              - pharmaceutical-researcher
+              - clinical-pharmacist
+              - drug-safety-specialist
+      - id: nursing
+        name: 护理学院
+        disciplineId: medicine
+        majors:
+          - id: nursing-major
+            name: 护理学
+            schoolId: nursing
+            careerSlugs:
+              - registered-nurse
+              - nurse-practitioner
+              - community-health-nurse
+
+  # ===== 4. 管理学 =====
+  - id: management
+    name: 管理学
+    description: 研究组织管理与资源优化配置
+    icon: briefcase
+    color: "#7C3AED"
+    schools:
+      - id: econ-management
+        name: 经济管理学院
+        disciplineId: management
+        majors:
+          - id: accounting
+            name: 会计学
+            schoolId: econ-management
+            careerSlugs:
+              - accountant
+              - auditor
+              - tax-consultant
+              - financial-analyst
+          - id: business-admin
+            name: 工商管理
+            schoolId: econ-management
+            careerSlugs:
+              - management-consultant
+              - product-manager
+              - business-analyst
+              - entrepreneur
+              - operations-manager
+          - id: finance
+            name: 金融学
+            schoolId: econ-management
+            careerSlugs:
+              - investment-banker
+              - securities-analyst
+              - risk-manager
+              - fund-manager
+              - financial-advisor
+      - id: public-management
+        name: 公共管理学院
+        disciplineId: management
+        majors:
+          - id: public-admin
+            name: 公共管理
+            schoolId: public-management
+            careerSlugs:
+              - civil-servant
+              - public-policy-analyst
+              - ngo-manager
+              - urban-planner
+
+  # ===== 5. 人文学科 =====
+  - id: humanities
+    name: 人文学科
+    description: 研究人类文化与精神世界
+    icon: book-open
+    color: "#D97706"
+    schools:
+      - id: chinese-lit
+        name: 人文学院
+        disciplineId: humanities
+        majors:
+          - id: chinese-language
+            name: 汉语言文学
+            schoolId: chinese-lit
+            careerSlugs:
+              - editor
+              - journalist
+              - copywriter
+              - chinese-teacher
+              - content-strategist
+          - id: history
+            name: 历史学
+            schoolId: chinese-lit
+            careerSlugs:
+              - historian
+              - museum-curator
+              - archaeologist
+              - history-teacher
+              - cultural-heritage-specialist
+          - id: philosophy
+            name: 哲学
+            schoolId: chinese-lit
+            careerSlugs:
+              - philosophy-researcher
+              - ethics-consultant
+              - philosophy-teacher
+              - policy-analyst
+      - id: foreign-languages
+        name: 外国语言文学系
+        disciplineId: humanities
+        majors:
+          - id: english
+            name: 英语
+            schoolId: foreign-languages
+            careerSlugs:
+              - translator
+              - interpreter
+              - english-teacher
+              - international-business-specialist
+
+  # ===== 6. 社会科学 =====
+  - id: social-sciences
+    name: 社会科学
+    description: 研究社会现象与人类行为
+    icon: users
+    color: "#0891B2"
+    schools:
+      - id: sociology
+        name: 社会科学学院
+        disciplineId: social-sciences
+        majors:
+          - id: sociology-major
+            name: 社会学
+            schoolId: sociology
+            careerSlugs:
+              - sociologist
+              - social-worker
+              - market-researcher
+              - hr-specialist
+          - id: psychology
+            name: 心理学
+            schoolId: sociology
+            careerSlugs:
+              - psychologist
+              - counselor
+              - ux-researcher
+              - career-coach
+          - id: international-politics
+            name: 国际政治
+            schoolId: sociology
+            careerSlugs:
+              - diplomat
+              - foreign-affairs-analyst
+              - international-relations-scholar
+      - id: journalism
+        name: 新闻与传播学院
+        disciplineId: social-sciences
+        majors:
+          - id: journalism-major
+            name: 新闻学
+            schoolId: journalism
+            careerSlugs:
+              - journalist
+              - news-editor
+              - media-producer
+              - public-relations-specialist
+
+  # ===== 7. 法学 =====
+  - id: law
+    name: 法学
+    description: 研究法律理论与法律实践
+    icon: scale
+    color: "#B45309"
+    schools:
+      - id: law-school
+        name: 法学院
+        disciplineId: law
+        majors:
+          - id: law-major
+            name: 法学
+            schoolId: law-school
+            careerSlugs:
+              - lawyer
+              - judge
+              - prosecutor
+              - legal-consultant
+              - compliance-officer
+
+  # ===== 8. 艺术学 =====
+  - id: arts
+    name: 艺术学
+    description: 研究艺术创作与设计表达
+    icon: palette
+    color: "#DB2777"
+    schools:
+      - id: academy-of-arts
+        name: 美术学院
+        disciplineId: arts
+        majors:
+          - id: visual-communication
+            name: 视觉传达设计
+            schoolId: academy-of-arts
+            careerSlugs:
+              - graphic-designer
+              - ui-designer
+              - brand-designer
+              - illustrator
+          - id: animation
+            name: 动画
+            schoolId: academy-of-arts
+            careerSlugs:
+              - animator
+              - 3d-modeler
+              - game-artist
+              - motion-designer
+          - id: industrial-design
+            name: 工业设计
+            schoolId: academy-of-arts
+            careerSlugs:
+              - industrial-designer
+              - product-designer
+              - cmf-designer
+          - id: digital-media
+            name: 数字媒体艺术
+            schoolId: academy-of-arts
+            careerSlugs:
+              - digital-media-artist
+              - vfx-artist
+              - interactive-installation-artist
+
+  # ===== 9. 经济学 =====
+  - id: economics
+    name: 经济学
+    description: 研究资源配置与社会经济活动规律
+    icon: trending-up
+    color: "#CA8A04"
+    schools:
+      - id: econ-school
+        name: 经济系
+        disciplineId: economics
+        majors:
+          - id: economics-major
+            name: 经济学
+            schoolId: econ-school
+            careerSlugs:
+              - economist
+              - economic-analyst
+              - policy-researcher
+              - data-analyst
+              - market-researcher
+
+  # ===== 10. 教育学 =====
+  - id: education
+    name: 教育学
+    description: 研究教育理论与教育实践的科学
+    icon: graduation-cap
+    color: "#4F46E5"
+    schools:
+      - id: education-school
+        name: 教育研究院
+        disciplineId: education
+        majors:
+          - id: education-major
+            name: 教育学
+            schoolId: education-school
+            careerSlugs:
+              - teacher
+              - education-researcher
+              - curriculum-designer
+              - education-administrator
+              - instructional-designer
+
+  # ===== 11. 农学 =====
+  - id: agriculture
+    name: 农学
+    description: 研究农业生产与农村发展
+    icon: sprout
+    color: "#65A30D"
+    schools:
+      - id: agriculture-school
+        name: 农业学院
+        disciplineId: agriculture
+        majors:
+          - id: agronomy
+            name: 农学
+            schoolId: agriculture-school
+            careerSlugs:
+              - agronomist
+              - agricultural-scientist
+              - crop-specialist
+              - soil-scientist
+      - id: plant-protection
+        name: 植物保护
+        schoolId: agriculture-school
+        disciplineId: agriculture
+        majors:
+          - id: plant-protection-major
+            name: 植物保护
+            schoolId: plant-protection
+            careerSlugs:
+              - plant-protection-specialist
+              - pesticide-researcher
+              - agricultural-consultant
+
+  # ===== 12. 交叉学科 =====
+  - id: cross-disciplinary
+    name: 交叉学科
+    description: 多学科交叉融合的新兴学科领域
+    icon: git-branch
+    color: "#9333EA"
+    schools:
+      - id: cross-school
+        name: 交叉信息研究院
+        disciplineId: cross-disciplinary
+        majors:
+          - id: data-science
+            name: 数据科学与大数据技术
+            schoolId: cross-school
+            careerSlugs:
+              - data-scientist
+              - data-engineer
+              - business-intelligence-analyst
+              - big-data-architect
+          - id: cyber-security
+            name: 网络空间安全
+            schoolId: cross-school
+            careerSlugs:
+              - cybersecurity-analyst
+              - security-engineer
+              - penetration-tester
+              - security-consultant
+          - id: bioinformatics
+            name: 生物信息学
+            schoolId: cross-school
+            careerSlugs:
+              - bioinformatician
+              - computational-biologist
+              - genomics-analyst
